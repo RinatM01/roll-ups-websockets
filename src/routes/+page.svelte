@@ -24,6 +24,10 @@
 		gameId = '';
 	});
 
+	socket.on('disconnect', (reason) => {
+		window.location.reload();
+	});
+
 	const submitJoin = () => {
 		console.log(gameId);
 		socket.emit('join', { clientId, gameId, userName });
